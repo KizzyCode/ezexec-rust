@@ -1,0 +1,31 @@
+[package]
+name = "ezexec"
+version = "0.1.0"
+edition = "2018"
+authors = ["KizzyCode Software Labs./Keziah Biermann <development@kizzycode.de>"]
+keywords = []
+categories = []
+description = "A simple API to execute binaries or shell commands via `std::process::Command`"
+license = "BSD-2-Clause OR MIT"
+repository = "https://github.com/KizzyCode/ezexec-rust"
+readme = "README.md"
+
+
+[badges]
+appveyor = { repository = "KizzyCode/ezexec-rust" }
+
+
+[features]
+default = []
+
+
+[dependencies]
+ebacktrace = "0.3"
+
+
+[profile.release]
+overflow-checks = true
+
+
+[profile.bench]
+overflow-checks = true
