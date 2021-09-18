@@ -1,3 +1,5 @@
+//! Provides functions to get a binary or shell by it's name
+
 use crate::error::Result;
 use std::{
     env, borrow::Cow, ops::Deref, ffi::OsStr,
@@ -6,7 +8,7 @@ use std::{
 };
 
 
-/// A binary reference
+/// A reference to a binary
 #[derive(Debug)]
 pub struct Binary {
     /// The path to the binary
@@ -23,7 +25,7 @@ impl Binary {
 
         Ok(this)
     }
-    /// Finds a `binary` in `$PATH`/`%PATH%`
+    /// Finds a `binary` in `PATH`
     pub fn find<B>(binary: B) -> Result<Self> where B: AsRef<str> {
         // Get the binary string
         let binary = binary.as_ref();
@@ -77,14 +79,14 @@ impl AsRef<Path> for Binary {
 }
 
 
-/// A shell
+/// A reference to a shell
 #[derive(Debug)]
 pub struct Shell {
     /// The underlying shell
     shell: Binary
 }
 impl Shell {
-    /// Fins the default shell or falls back to `sh`/`powershell.exe` if available
+    /// Finds the default shell or falls back to `sh` (on unix likes) or `powershell.exe` (on windows) if available
     pub fn find() -> Result<Self> {
         // Determine the shell
         let shell = match env::var("SHELL") {

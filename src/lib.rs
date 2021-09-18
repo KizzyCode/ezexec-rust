@@ -28,7 +28,7 @@
 //! ```
 
 #[macro_use] pub mod error;
-mod lookup;
+pub mod lookup;
 mod builder;
 mod capturing_executor;
 mod transparent_executor;
