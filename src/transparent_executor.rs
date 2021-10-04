@@ -12,7 +12,7 @@ pub struct TransparentExecutor {
 }
 impl TransparentExecutor {
     /// Creates a new binary executor
-    pub(in crate) fn new(mut command: Command) -> Result<Self> {
+    pub(in crate) fn new(command: &mut Command) -> Result<Self> {
         // Set the stdio
         command.stdout(Stdio::inherit());
         command.stderr(Stdio::inherit());

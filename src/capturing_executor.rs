@@ -16,7 +16,7 @@ pub struct CapturingExecutor {
 }
 impl CapturingExecutor {
     /// Creates a new binary executor
-    pub(in crate) fn new(mut command: Command) -> Result<Self> {
+    pub(in crate) fn new(command: &mut Command) -> Result<Self> {
         // Set the stdio
         command.stdin(Stdio::piped());
         command.stdout(Stdio::piped());

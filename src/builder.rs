@@ -67,11 +67,11 @@ impl ExecBuilder {
     }
 
     /// Spawn the child and capture the output
-    pub fn spawn_captured(self) -> Result<CapturingExecutor> {
-        CapturingExecutor::new(self.command)
+    pub fn spawn_captured(&mut self) -> Result<CapturingExecutor> {
+        CapturingExecutor::new(&mut self.command)
     }
     /// Spawn the child and inherit stdin/-out/-err from the parent process
-    pub fn spawn_transparent(self) -> Result<TransparentExecutor> {
-        TransparentExecutor::new(self.command)
+    pub fn spawn_transparent(&mut self) -> Result<TransparentExecutor> {
+        TransparentExecutor::new(&mut self.command)
     }
 }
