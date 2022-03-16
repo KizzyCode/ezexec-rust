@@ -73,7 +73,7 @@ impl CapturingExecutor {
 
             // Throw the child error
             let stderr_string = String::from_utf8_lossy(&stderr_bytes);
-            Err(eexec!("Child process failed ({:?}): {}", exit_status.code(), stderr_string))?
+            return Err(eexec!("Child process failed ({:?}): {}", exit_status.code(), stderr_string));
         }
         Ok(())
     }

@@ -1,7 +1,7 @@
 [package]
 name = "ezexec"
-version = "0.2.0"
-edition = "2018"
+version = "0.3.0"
+edition = "2021"
 authors = ["KizzyCode Software Labs./Keziah Biermann <development@kizzycode.de>"]
 keywords = []
 categories = []
@@ -20,12 +20,11 @@ default = []
 
 
 [dependencies]
-ebacktrace = "0.3"
+ebacktrace = "0.5"
 
 
 [profile.release]
 overflow-checks = true
-
 
 [profile.bench]
 overflow-checks = true

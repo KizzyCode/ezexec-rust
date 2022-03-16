@@ -42,7 +42,7 @@ impl ExecBuilder {
         
         // Create the arguments
         let command = command.as_ref();
-        let args = execstring_args.into_iter()
+        let args = execstring_args.iter()
             .chain(iter::once(&command));
         Self::with_path(shell, args)
     }

@@ -4,7 +4,7 @@
 [![docs.rs](https://docs.rs/ezexec/badge.svg)](https://docs.rs/ezexec)
 [![crates.io](https://img.shields.io/crates/v/ezexec.svg)](https://crates.io/crates/ezexec)
 [![Download numbers](https://img.shields.io/crates/d/ezexec.svg)](https://crates.io/crates/ezexec)
-[![dependency status](https://deps.rs/crate/ezexec/0.2.0/status.svg)](https://deps.rs/crate/ezexec/0.2.0)
+[![dependency status](https://deps.rs/crate/ezexec/0.3.0/status.svg)](https://deps.rs/crate/ezexec/0.3.0)
 
 
 # `ezexec`

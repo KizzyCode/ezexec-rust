@@ -20,7 +20,7 @@ impl Binary {
         // Create self and check if the path exists
         let this = Self { path: path.as_ref().to_path_buf() };
         if !this.path.is_file() {
-            Err(epath!("Binary does not exist: {}", this))?
+            return Err(epath!("Binary does not exist: {}", this));
         }
 
         Ok(this)

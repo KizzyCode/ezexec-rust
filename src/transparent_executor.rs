@@ -59,7 +59,7 @@ impl TransparentExecutor {
         
         // Read stderr if the process failed
         if !exit_status.success() {
-            Err(eexec!("Child process failed ({:?})", exit_status.code()))?
+            return Err(eexec!("Child process failed ({:?})", exit_status.code()));
         }
         Ok(())
     }

@@ -9,7 +9,7 @@ use std::{
 
 /// Creates a new variant
 #[macro_export] macro_rules! e {
-    ($kind:expr, $($arg:tt)*) => ({ $crate::error::ErrorImpl::with_string($kind, format!($($arg)*)) })
+    ($kind:expr, $($arg:tt)*) => ({ $crate::error::ErrorImpl::new($kind, format!($($arg)*)) })
 }
 /// Creates a new `ErrorImpl::PathError` kind
 #[macro_export] macro_rules! epath {
